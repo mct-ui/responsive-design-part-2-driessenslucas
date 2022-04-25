@@ -398,62 +398,30 @@ a:focus {
 \*------------------------------------*/
 
 /*
-    Component: footer
-    ---
-    Main footer of the website
-*/
-
-.c-footer {
-}
-
-.c-footer__logo {
-}
-
-.c-footer__nav {
-}
-
-@media (min-width: 768px) {
-	.c-footer {
-	}
-
-	.c-footer__logo {
-	}
-
-	.c-footer__nav {
-	}
-}
-
-@media (min-width: 992px) {
-	.c-footer {
-	}
-
-	.c-footer__logo {
-	}
-
-	.c-footer__logo .c-logo {
-	}
-
-	.c-footer__nav {
-	}
-}
-
-/*
     Component: Title icon
     ---
     Special type of title with icon
 */
 
 .c-title-icon {
+	display: flex;
 }
 
 .c-title-icon__icon {
+	padding-right: 0.5rem;
 	max-width: 20%;
 }
 
 @media (min-width: 768px) {
+	.c-title-icon__icon {
+		max-width: 15%;
+	}
 }
 
 @media (min-width: 1200px) {
+	.c-title-icon__icon {
+		max-width: 20%;
+	}
 }
 
 /*
@@ -678,6 +646,98 @@ a:focus {
 	.c-nav__list {
 		display: flex;
 		gap: 32px;
+	}
+}
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.c-footer__logo {
+	height: 60px;
+}
+
+.c-footer__nav {
+	flex-basis: 50%;
+}
+
+.c-footer__nav > nav > ul > li > a {
+	text-decoration: none;
+	color: #202024;
+}
+.c-footer__nav > nav > ul {
+	padding: 0;
+	list-style: none;
+}
+.c-footer__nav > nav > ul > li {
+	text-align: start;
+	padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+	.c-footer {
+		display: flex;
+		justify-content: center;
+	}
+	.c-footer__logo {
+		align-items: flex-start;
+		align-self: center;
+		order: 0;
+		height: 60px;
+		width: 140px;
+	}
+	.c-footer__nav {
+		flex-basis: 0;
+		align-items: center;
+	}
+	.c-footer__nav:nth-child(3) {
+		order: 1;
+	}
+	.c-footer__nav:nth-child(2) {
+		order: -1;
+	}
+	.c-footer__nav > nav > ul {
+		display: flex;
+		gap: 24px;
+	}
+}
+
+@media (min-width: 992px) {
+	.c-footer {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: nowrap;
+	}
+
+	.c-footer__logo {
+		order: 0;
+		justify-content: center;
+		align-self: center;
+		height: 60px;
+		width: 140px;
+	}
+	.c-footer__nav {
+		flex-basis: 0;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	.c-footer__nav:nth-child(3) {
+		order: 1;
+	}
+	.c-footer__nav:nth-child(2) {
+		order: -1;
+	}
+	.c-footer__nav > nav > ul {
+		display: flex;
+		gap: 24px;
 	}
 }
 
